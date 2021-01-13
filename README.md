@@ -18,4 +18,4 @@ python3 main.py
 ```
 
 ### screenshots
-
+![mouse auto clicker by Moein Aghamirzaei](https://raw.githubusercontent.com/mrmoein/mouse-auto-clicker/main/Screenshot.png)
