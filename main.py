@@ -178,7 +178,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "mouse auto clicker by Moein"))
+        MainWindow.setWindowIcon(QtGui.QIcon(os.path.join(sys.path[0], 'mouse-icon.png')))
         self.groupBox_4.setTitle(_translate("MainWindow", "Click Options"))
         self.label_9.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Mouse Button</p></body></html>"))
         self.comboBox_option_mouse_button.setItemText(0, _translate("MainWindow", "Left Button"))
