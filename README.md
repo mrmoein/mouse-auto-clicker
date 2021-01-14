@@ -7,8 +7,7 @@ download or clone the project: `git clone https://github.com/mrmoein/mouse-auto-
 
 install dependencies: 
 ```
-pip3 install PyQt5
-sudo apt-get install python3-pyqt5
+pip3 install pyqt5
 pip3 install keybind
 pip3 install pynput
 ```
