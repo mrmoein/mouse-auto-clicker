@@ -19,18 +19,17 @@ class Clicker:
 
     def thread(self, data):
         time_sleep = 0
-        time_sleep += data['interval_hours'] * 60 * 60 * 1000
-        time_sleep += data['interval_minutes'] * 60 * 1000
-        time_sleep += data['interval_seconds'] * 1000
-        time_sleep += data['interval_milliseconds']
+        time_sleep += data['interval_hours'] * 60 * 60
+        time_sleep += data['interval_minutes'] * 60
+        time_sleep += data['interval_seconds']
+        time_sleep += data['interval_milliseconds'] / 1000
         regression = data['regression_milliseconds']
-        if regression:
-            time_sleep += random.randint(regression * -1, regression)
+
         if time_sleep > 0:
-            time_sleep = time_sleep / 1000
             while not self.event.is_set():
+                random_r = 0 if not regression else random.randint(regression * -1, regression) / 1000
                 self.click(data)
-                self.event.wait(time_sleep)
+                self.event.wait(time_sleep + random_r)
         self.status = 'stop'
         self.event.clear()
 
