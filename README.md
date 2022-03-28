@@ -1,41 +1,18 @@
-# mouse auto clicker
+# Mouse Auto Clicker
 
-simple gui linux and windows mouse auto clicker with python3 and PyQt
+Simple GUI linux and windows mouse auto clicker with python3 and PyQt5
 
-### Usage
-download or clone the project: `git clone https://github.com/mrmoein/mouse-auto-clicker.git`
-
-install dependencies: 
+### Installation
 ```
-pip3 install pyqt5
-pip3 install keybind
-pip3 install pynput
-```
-run `main.py`
-```
+git clone https://github.com/mrmoein/mouse-auto-clicker.git
 cd mouse-auto-clicker
-python3 main.py
+python install.py
+sudo chmod +x ~/.local/share/applications/mouse-auto-clicker.desktop
 ```
+
+now search for `Mouse Auto Clicker` app in your desktop launcher.
+
+> ⚠️ IMPORTANT: After the installation please make sure you do not remove the repository. It is required for the desktop shortcut to work.
 
 ### screenshots
-![mouse auto clicker by Moein Aghamirzaei](https://raw.githubusercontent.com/mrmoein/mouse-auto-clicker/main/Screenshot.png)
-
-#### adding launcher for fast access
-open a terminal and run this 
-```
-nano ~/.local/share/applications/mouse-auto-clicker.desktop
-```
-paste this into nano editor
-```
-[Desktop Entry]
-Name= mouse auto clicker
-Comment= simple gui linux and windows mouse auto clicker with python3 and PyQt By Moein Aghamirzaei
-Exec= python3 /path/to/directory/main.py
-Icon= /path/to/directory/mouse-icon.png
-Terminal=false
-Type=Application
-StartupNotify=true
-```
-note: replace `/path/to/directory` with current application path
-
-![Screenshot-launcher](https://raw.githubusercontent.com/mrmoein/mouse-auto-clicker/main/Screenshot-launcher.png)
+![mouse auto clicker by Moein Aghamirzaei](images/Screenshot.png)
