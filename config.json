@@ -6,6 +6,6 @@
     "interval_hours": 0,
     "interval_minutes": 0,
     "interval_seconds": 0,
-    "interval_milliseconds": 330,
-    "regression_milliseconds": 0
+    "interval_milliseconds": 500,
+    "regression_milliseconds": 300
 }
