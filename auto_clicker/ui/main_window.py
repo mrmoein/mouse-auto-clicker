@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '../../designer/main_window.ui'
+# Form implementation generated from reading ui file 'designer/main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(481, 221)
-        MainWindow.setMinimumSize(QtCore.QSize(481, 221))
-        MainWindow.setMaximumSize(QtCore.QSize(481, 221))
+        MainWindow.resize(517, 221)
+        MainWindow.setMinimumSize(QtCore.QSize(517, 221))
+        MainWindow.setMaximumSize(QtCore.QSize(517, 221))
         MainWindow.setAnimated(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
         MainWindow.setDockNestingEnabled(False)
@@ -133,7 +133,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Mouse Auto Clicker"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Click Interval"))
         self.label_3.setText(_translate("MainWindow", "Seconds"))
         self.label_2.setText(_translate("MainWindow", "Minutes"))
@@ -142,8 +142,8 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle(_translate("MainWindow", "Regression"))
         self.label_5.setText(_translate("MainWindow", "MilliSeconds"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Click Hotkey"))
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Stop Hotkey. ctrl+</p></body></html>"))
-        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Start Hotkey. ctrl+ </p></body></html>"))
+        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Stop Hotkey: <span style=\" font-weight:600;\">ctrl +</span></p></body></html>"))
+        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Start Hotkey:<span style=\" font-weight:600;\"> ctrl +</span></p></body></html>"))
         self.groupBox_4.setTitle(_translate("MainWindow", "Click Options"))
         self.comboBox_option_mouse_button.setItemText(0, _translate("MainWindow", "Left Button"))
         self.comboBox_option_mouse_button.setItemText(1, _translate("MainWindow", "Right Button"))
