@@ -1,21 +1,23 @@
 import random
 import threading
 import time
-
 from pynput.mouse import Button, Controller
 
 
 class Clicker:
     def __init__(self):
         self.data = {}
-        self.event = threading.Event()
         self.mouse = Controller()
         self.status = 'stop'
 
     def start(self, data):
         if self.status == 'stop':
             self.status = 'start'
-            threading.Thread(target=self.thread, args=(data,)).start()
+            threading.Thread(target=self.thread, args=[data]).start()
+
+    @staticmethod
+    def get_random_number(regression):
+        return random.randint(regression * -1, regression) / 1000
 
     def thread(self, data):
         time_sleep = 0
@@ -24,14 +26,21 @@ class Clicker:
         time_sleep += data['interval_seconds']
         time_sleep += data['interval_milliseconds'] / 1000
         regression = data['regression_milliseconds']
+        random_number_latest = None
 
         if time_sleep > 0:
-            while not self.event.is_set():
-                random_r = 0 if not regression else random.randint(regression * -1, regression) / 1000
-                self.click(data)
-                self.event.wait(time_sleep + random_r)
+            while self.status == 'start':
+                if regression == 0:
+                    random_number = 0
+                else:
+                    random_number = self.get_random_number(regression)
+                    while random_number == random_number_latest:
+                        random_number = self.get_random_number(regression)
+                    random_number_latest = random_number
+                print(random_number)
+                threading.Thread(target=self.click, args=[data]).start()
+                time.sleep(time_sleep + random_number)
         self.status = 'stop'
-        self.event.clear()
 
     def click(self, data):
         if data['option_mouse_button'] == 0:
@@ -42,7 +51,4 @@ class Clicker:
         self.mouse.click(button, click_count)
 
     def stop(self):
-        self.event.set()
-
-    def create_event(self):
-        self.event = threading.Event()
+        self.status = 'stop'
